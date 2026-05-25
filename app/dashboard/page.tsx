@@ -41,10 +41,18 @@ export default function Dashboard() {
       const cs = await contaService.listar(user.id);
       setContas(cs);
       if (cs[0]) {
-        const t = await transacaoService
-          .extrato(cs[0].nmrConta)
-          .catch(() => []);
-        setTxs(t.slice(0, 5));
+        const extratos = await Promise.all(
+  cs.map((c) =>
+    transacaoService.extrato(c.nmrConta).catch(() => [])
+  )
+);
+
+const todasTxs = extratos
+  .flat()
+  .sort((a, b) => new Date(b.realizadoEm).getTime() - new Date(a.realizadoEm).getTime())
+  .slice(0, 5);
+
+setTxs(todasTxs);
       }
       console.log(contaService.listar(user.id));
     } finally {
