@@ -1,42 +1,53 @@
-# Banco Digital — Frontend (Next.js 15)
+# 💳 Banco Digital
 
-Frontend bancário consumindo API Spring Boot com JWT.
+Aplicação Full Stack de Banco Digital desenvolvida com:
 
-## Stack
-Next.js 15 (App Router) · React 19 · TypeScript · Tailwind CSS · Axios · React Hook Form · Zod · Zustand · Sonner · Lucide · date-fns.
+- Frontend: Next.js 15 + React + TypeScript + Tailwind CSS
+- Backend: Spring Boot + Java 21 + PostgreSQL
+- Autenticação JWT
+- Interface moderna inspirada em bancos digitais
 
-## Como rodar
+---
 
-```bash
-cp .env.local.example .env.local   # edite se necessário
-npm install
-npm run dev
-```
+# 📸 Preview
 
-Acesse http://localhost:3000. A API Spring Boot deve estar em http://localhost:8080 com CORS liberado para http://localhost:3000.
+## Funcionalidades
 
-## Estrutura
+✅ Login com JWT  
+✅ Cadastro de clientes  
+✅ Criação de contas bancárias  
+✅ Depósito  
+✅ Saque  
+✅ Transferência entre contas  
+✅ Extrato bancário  
+✅ Dashboard financeira  
+✅ Proteção de rotas  
+✅ Responsivo  
+✅ Dark Mode  
 
-```
-src/
-  app/            # rotas (App Router)
-  components/     # UI, modais, formulários
-  contexts/       # AuthContext
-  services/       # axios + serviços de API
-  hooks/          # custom hooks
-  types/          # tipos compartilhados
-  utils/          # format, masks
-  validators/     # schemas zod
-middleware.ts     # protege rotas autenticadas
-```
+---
 
-## Rotas
-- `/login`, `/cadastro` — públicas
-- `/dashboard` — visão geral
-- `/contas`, `/contas/criar`
-- `/transferencias`
-- `/extrato/[nmrConta]`
-- `/clientes`, `/perfil`
+# 🚀 Tecnologias
 
-## Autenticação
-JWT salvo em `localStorage` **e** num cookie `token` (para o middleware do Next ler em SSR). Logout limpa ambos.
+## Frontend
+
+- Next.js 15
+- React
+- TypeScript
+- Tailwind CSS
+- Axios
+- React Hook Form
+- Zod
+- Zustand
+- Lucide React
+- Sonner
+
+## Backend
+
+- Java 21
+- Spring Boot
+- Spring Security
+- JWT
+- BCrypt
+- PostgreSQL
+- JPA / Hibernate
