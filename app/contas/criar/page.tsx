@@ -46,7 +46,7 @@ export default function CriarContaPage() {
               <option value="POUPANCA">Poupança</option>
             </select>
           </div>
-          <Input label="ID do cliente" type="number" {...register("clienteId")} error={errors.clienteId?.message} />
+          <Input disabled label="ID do cliente" type="number" {...register("clienteId")} error={errors.clienteId?.message} />
           <Button type="submit" loading={loading} className="w-full">Criar conta</Button>
         </form>
       </Card>
